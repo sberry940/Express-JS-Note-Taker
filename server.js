@@ -1,19 +1,19 @@
-// added dependencies 
-const express = require('express');
-// creates express variable
+const express = require("express");
 const app = express();
-
-// defines port 
 const PORT = process.env.PORT || 3001;
+const apiRoutes = require('./routes/apiRoutes');
+const htmlRoutes = require('./routes/htmlRoutes');
 
-// adds middleware
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
 app.use(express.static('public'));
-require('./routes/apiRoutes')(app);
-require('./routes/htmlRoutes')(app);
+// parse incoming string or array data
+app.use(express.urlencoded({extended: true}));
+// parse incoming JSON data
+app.use(express.json());
 
-// listen on PORT
-app.listen(PORT, function(){
-    console.log('Server is listening on: http://localhost' + PORT);
-})
+// Use apiRoutes
+app.use('/api', apiRoutes);
+app.use('/', htmlRoutes);
+
+app.listen(PORT, () => {
+    console.log(`API server now on port ${PORT}. Welcome!`);
+  });
