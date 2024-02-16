@@ -3,17 +3,6 @@
     Licensed under the none license.
   ## Description
   To create and delete notes using Express.js
-  ## Deployed Application URL
-  
-  ## Screenshot
-  ![alt-text]()
-  ## Table of Contents
-  * [Features](#features)
-  * [Languages & Dependencies](#languagesanddependencies)
-  * [How to Use This Application](#HowtoUseThisApplication)
-  * [Contributors](#contributors)
-  * [Testing](#testing)
-  * [Questions](#questions)
   ## Features
   can add and delete notes very easily
   ## Languages & Dependencies
